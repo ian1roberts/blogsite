@@ -1,0 +1,21 @@
+---
+title: My first post
+date: 2025-03-29
+output: blogdown::html_page
+---
+
+Hello world!
+
+```{r}
+a <- 1
+b <- 2
+print(a + b)
+```
+
+```{python}
+a = 1
+b = 2
+print(a + b)
+```
+
+That's code!

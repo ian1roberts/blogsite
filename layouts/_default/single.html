@@ -1,0 +1,44 @@
+{{/* Override the default single template */}}
+<div class="mx-auto flex max-w-screen-xl">
+  {{/* Simplified sidebar without TOC */}}
+  <aside class="hb-sidebar">
+    <div class="hb-sidebar__inner">
+      <div class="px-4 py-2">
+        <span class="hb-sidebar__title">
+          <a href="{{ site.Home.RelPermalink }}" class="underline">{{ site.Title }}</a>
+        </span>
+      </div>
+      
+      {{- $show_navbar := site.Params.header.navbar.enable | default true -}}
+      {{- if and $show_navbar site.Menus.navbar -}}
+        <div class="hb-sidebar-menu">
+          <ul>
+            {{ range site.Menus.navbar }}
+            <li>
+              <a href="{{.URL | relLangURL}}">
+                {{ .Pre }}
+                <span>{{ .Name }}</span>
+              </a>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+      {{- end -}}
+    </div>
+  </aside>
+  
+  {{/* Skip TOC component */}}
+  
+  <article class="w-full break-words flex min-h-[calc(100vh-var(--navbar-height))] min-w-0 justify-center pb-8 pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+    {{/* Here we include the article content */}}
+    <div class="relative w-full max-w-screen-md px-4 pt-8 md:px-6">
+      <header>
+        <h1 class="font-heading text-4xl font-bold leading-tight mb-4">{{ .Title }}</h1>
+      </header>
+      
+      <div class="content">
+        {{ .Content }}
+      </div>
+    </div>
+  </article>
+</div>

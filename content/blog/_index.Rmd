@@ -1,0 +1,4 @@
+---
+title: Blog
+output: blogdown::html_page
+---

@@ -1,0 +1,7 @@
+public
+.vscode
+.env
+# Ignore all .html files under the content directory
+content/**/*.html
+resources
+*.lock

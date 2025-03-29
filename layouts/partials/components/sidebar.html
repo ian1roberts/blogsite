@@ -1,0 +1,81 @@
+{{- $context := .context -}}
+{{- $show_sidebar := not .no_sidebar -}}
+
+{{- $page := $context -}}
+{{- $section := $page.FirstSection -}}
+
+<aside class="hb-sidebar {{ if not $show_sidebar }}hb-sidebar--hide{{ else }}{{ end }}">
+  <div class="hb-sidebar__inner">
+    <div class="px-4 py-2">
+      <span class="hb-sidebar__title">
+        <a href="{{ $.context.Site.Home.RelPermalink }}" class="underline">
+          {{ site.Title }}
+        </a>
+      </span>
+    </div>
+
+    <!-- Use navbar menu if it exists; otherwise use section menu. -->
+    {{- $show_navbar := site.Params.header.navbar.enable | default true -}}
+    {{- if and $show_navbar site.Menus.navbar -}}
+      <div class="hb-sidebar-menu">
+        <ul>
+          {{ range site.Menus.navbar }}
+          <li>
+            {{- $url := .URL | relLangURL -}}
+            {{- $active := cond (or (eq $context.RelPermalink $url) (hasPrefix $context.RelPermalink (printf "%s/" $url))) "active" "" -}}
+            <a href="{{.URL | relLangURL}}" class="{{$active}}">
+              {{ .Pre }}
+              <span>{{ .Name }}</span>
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    {{- end -}}
+
+    {{- if and $show_navbar (not site.Menus.navbar) (site.Params.marketing.seo.site_type | lower) -}}
+      <div class="hb-sidebar-menu">
+        <ul>
+          {{/* Add docs and updates menu items if they exist */}}
+          {{ if $.context.Site.GetPage "docs" }}
+          <li>
+            {{ $active := eq $.context.Section "docs" }}
+            <a href="/docs/" class="{{ if $active }}active{{ end }}">
+              <span>{{ i18n "docs" | default "Docs" }}</span>
+            </a>
+          </li>
+          {{ end }}
+          {{ if $.context.Site.GetPage "updates" }}
+          <li>
+            {{ $active := eq $.context.Section "updates" }}
+            <a href="/updates/" class="{{ if $active }}active{{ end }}">
+              <span>{{ i18n "updates" | default "Updates" }}</span>
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    {{- end -}}
+    
+    <!-- TOC - This is the part that needs fixing -->
+    <div class="hb-sidebar-toc">
+      {{- template "mobile-toc" (dict "page" $page) -}}
+    </div>
+  </div>
+</aside>
+
+{{- define "mobile-toc" -}}
+  {{ $page := .page }}
+  {{/* Add nil check here */}}
+  {{ if and $page.Fragments (isset $page.Fragments "Headings") }}
+    {{ with $page.Fragments.Headings }}
+      <ul class="hb-sidebar-mobile-toc">
+        {{- range . }}
+          <li class="toc-entry level-{{ .Depth }}">
+            <a href="#{{.ID}}">{{ .Title }}</a>
+          </li>
+        {{- end }}
+      </ul>
+    {{ end }}
+  {{ end }}
+{{- end -}}

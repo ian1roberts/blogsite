@@ -1,0 +1,50 @@
+---
+# Display name
+title: Ian's Blogsite
+
+# Full name (for SEO)
+first_name: Ian
+last_name: Roberts
+
+# Status emoji
+status:
+  icon: ☕️
+
+# Is this the primary user of the site?
+superuser: true
+
+# Role/position/tagline
+role: A collection of semiuseful things
+
+# Organizations/Affiliations to show in About widget
+organizations:
+  - name: Ian Roberts
+    url: https://github.com/ian1roberts
+
+# Short bio (displayed in user profile at end of posts)
+bio: Resident tinkerer and breaker of things
+
+# Social Networking
+# Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
+profiles:
+  - icon: at-symbol
+    url: 'mailto:ian2roberts@gmail.com'
+    label: E-mail Me
+ 
+  # Link to a PDF of your resume/CV - upload it to `static/uploads/resume.pdf`
+  - icon: academicons/cv
+    url: uploads/resume.pdf
+    label: Download my resume
+  - icon: rss
+    url: ./post/index.xml
+    label: Subscribe to my blog via RSS feed
+
+# Highlight the author in author lists? (true/false)
+highlight_name: true
+
+# Author's website URL
+website: ""
+output: blogdown::html_page
+---
+
+Does tech and stuff
