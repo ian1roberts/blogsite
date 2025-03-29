@@ -51,10 +51,17 @@ locale:
 # Site features
 features:
   math:
-    enable: false
+    enable: true
   privacy_pack:
     enable: false
   repository:
     url: 'https://github.com/HugoBlox/hugo-blox-builder/'
     content_dir: starters/blog/content
     branch: main
+  dark_mode:
+    enable: false
+  toc:
+    enable: true
+    position: right
+    max_depth: 3
+
