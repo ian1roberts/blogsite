@@ -3,6 +3,7 @@ title: 'Home'
 date: 2023-10-24
 type: landing
 output: blogdown::html_page
+toc: true
 sections:
   - block: resume-biography
     content:
@@ -22,4 +23,3 @@ sections:
       spacing:
         padding: ['3rem', 0, '6rem', 0]
 ---
-

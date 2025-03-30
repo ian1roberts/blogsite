@@ -1,4 +1,6 @@
 ---
 title: Blog
 output: blogdown::html_page
+toc: false
 ---
+

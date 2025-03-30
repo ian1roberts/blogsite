@@ -18,6 +18,7 @@ tags:
   - Markdown
 toc: true
 output: blogdown::html_page
+type: blog
 ---
 
 Welcome 👋

@@ -2,9 +2,12 @@
 title: My first post
 date: 2025-03-29
 output: blogdown::html_page
+toc: true
 ---
 
-Hello world!
+# Hello world!
+
+## Welcome to my blog!
 
 ```{r}
 a <- 1

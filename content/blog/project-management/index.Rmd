@@ -9,6 +9,7 @@ tags:
   - Markdown
 image:
   caption: 'Image credit: [**Unsplash**](https://unsplash.com)'
+toc: true
 output: blogdown::html_page
 ---
 
