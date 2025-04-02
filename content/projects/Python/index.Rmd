@@ -1,0 +1,17 @@
+---
+title: "Python Programming"
+menu:
+  main:
+    parent: Projects
+    weight: 10
+categories:
+  - Programming
+tags:
+  - Python
+  - Package Development
+output: blogdown::html_document
+toc: true
+date: 2025-03-31
+---
+
+Details about Python Programming Projects.
