@@ -46,5 +46,3 @@ highlight_name: true
 website: ""
 output: blogdown::html_page
 ---
-
-Does tech and stuff

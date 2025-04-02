@@ -1,0 +1,12 @@
+---
+title: "Sub Project 2"
+menu:
+  main:
+    parent: Projects
+    weight: 10
+output: blogdown::html_document
+toc: true
+date: 2025-03-31
+---
+
+Details about Sub Project 2.

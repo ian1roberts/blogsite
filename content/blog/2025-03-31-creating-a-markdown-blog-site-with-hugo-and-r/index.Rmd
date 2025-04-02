@@ -1,0 +1,16 @@
+---
+title: Creating a markdown blog site with hugo and R
+author: ''
+date: '2025-03-31'
+slug: creating-a-markdown-blog-site-with-hugo-and-r
+categories: ["Programming",]
+tags: ["R", "Plotting"]
+---
+
+Nothing to see here
+
+Something to see?
+
+```{r}
+plot(1:10)
+```

@@ -8,6 +8,13 @@ main:
   - name: Topics
     url: tags/
     weight: 20
-  - name: Uses
-    url: uses/
+  - name: Projects
+    url: projects/
     weight: 30
+    children:
+      - name: Python
+        url: projects/Python/
+        weight: 10
+      - name: Project 2
+        url: projects/project2/
+        weight: 20
