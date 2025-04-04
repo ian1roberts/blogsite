@@ -1,0 +1,39 @@
+---
+title: "Packaging"
+menu:
+  main:
+    parent: Projects
+    weight: 10
+categories:
+  - Programming
+  - Docker
+tags:
+  - Python
+  - Packaging
+output: blogdown::html_document
+date: 2025-03-31
+---
+
+{{< toc >}}
+
+## Hello
+{{< badge icon="🚀" text="Explorer of the unknown" aria="Explorer Badge" >}}
+
+### Hello World
+
+Details about Docker and Python Sub Project 01.
+
+```{R}
+
+a <- 1
+b <- 2
+d <- a + b 
+print(d)
+```
+
+```{python}
+a = 1
+b = 2
+d = a + b
+print(d)
+```

@@ -1,8 +1,0 @@
----
-title: "Projects"
-menu:
-  main:
-    weight: 40
-output: blogdown::html_document
-toc: true
----

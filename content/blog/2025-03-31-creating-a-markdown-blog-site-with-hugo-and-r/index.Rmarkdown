@@ -7,10 +7,16 @@ categories: ["Programming",]
 tags: ["R", "Plotting"]
 ---
 
-Nothing to see here
+{{< toc >}}
 
-Something to see?
+
+## Nothing to see here
+
+Maybe
+
+
+## Something to see?
 
 ```{r}
 plot(1:10)
-```
+

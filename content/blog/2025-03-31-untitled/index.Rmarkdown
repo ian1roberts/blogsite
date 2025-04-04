@@ -6,11 +6,9 @@ slug: python-code-block-test
 summary: A test of a Python code block in an R Markdown document.
 categories:
   - Programming
-  - R
 tags:
-  - R
-  - blogdown
-
+  - Python
+  - Plotting
 ---
 
 Hello world!
@@ -35,4 +33,4 @@ plt.grid(True)
 # Save the plot to display it in the blog post
 plt.savefig("test_plot.png")
 plt.show()
-```
+
