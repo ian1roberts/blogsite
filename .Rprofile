@@ -1,5 +1,5 @@
 options(blogdown.hugo.version = "0.145.0")
-options(blogdown.ext = ".Rmd",
+options(blogdown.ext = ".Rmarkdown",
   blogdown.author = 'Ian Roberts',
   blogdown.subdir = "blog")
 

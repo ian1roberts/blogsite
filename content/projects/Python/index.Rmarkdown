@@ -1,5 +1,5 @@
 ---
-title: "Python Sub Project 01"
+title: "Python"
 menu:
   main:
     parent: Projects
@@ -8,10 +8,10 @@ categories:
   - Programming
 tags:
   - Python
-  - Docker
+  - Package Development
 output: blogdown::html_document
 toc: true
 date: 2025-03-31
 ---
 
-Details about Docker and Python Sub Project 01.
+Details about Python Programming Projects.

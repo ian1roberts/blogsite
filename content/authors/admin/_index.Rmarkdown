@@ -22,7 +22,7 @@ organizations:
     url: https://github.com/ian1roberts
 
 # Short bio (displayed in user profile at end of posts)
-bio: Resident tinkerer and breaker of things
+bio: Tinkerer and breaker of things
 
 # Social Networking
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
@@ -50,6 +50,6 @@ profiles:
 highlight_name: true
 
 # Author's website URL
-website: ""
+website: "raspian.local"
 output: blogdown::html_page
 ---
