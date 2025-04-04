@@ -8,23 +8,9 @@ appearance:
   mode: system
   color: blue
 
-# SEO
-marketing:
-  seo:
-    site_type: Person
-    local_business_type: ''
-    org_name: ''
-    description: 'A highly-customizable Hugo blog theme powered by Hugo Blox Builder.'
-    twitter: 'GetResearchDev'
-  analytics:
-    google_analytics: ''
-    baidu_tongji: ''
-    plausible: ''
-    fathom: ''
-    pirsch: ''
-  verification:
-    google: ''
-    baidu: ''
+# Customization
+share: false
+
 
 # Site header
 header:
@@ -37,11 +23,6 @@ header:
 footer:
   copyright:
     notice: '© {year} Me. This work is licensed under {license}'
-    license:
-      enable: true
-      allow_derivatives: false
-      share_alike: true
-      allow_commercial: false
 
 # Localization
 locale:
@@ -64,4 +45,5 @@ features:
     enable: true
     position: right
     max_depth: 3
-
+  share:
+    enable: false

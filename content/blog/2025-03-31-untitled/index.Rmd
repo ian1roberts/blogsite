@@ -10,7 +10,7 @@ categories:
 tags:
   - R
   - blogdown
-draft: yes
+
 ---
 
 Hello world!

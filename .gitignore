@@ -5,3 +5,4 @@ public
 content/**/*.html
 resources
 *.lock
+zzz_layouts

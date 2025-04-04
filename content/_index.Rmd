@@ -4,6 +4,7 @@ date: 2023-10-24
 type: landing
 output: blogdown::html_page
 toc: true
+share: false
 sections:
   - block: resume-biography
     content:
