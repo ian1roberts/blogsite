@@ -1,5 +1,7 @@
 ---
-title: "Packaging"
+title: "A Python Test"
+slug: "python-test"
+summary: "A test of Python"
 menu:
   main:
     parent: Projects
@@ -9,20 +11,19 @@ categories:
   - Docker
 tags:
   - Python
-  - Packaging
+  - Test
 date: 2025-03-31
 draft: false
-summary: "A test of Python Sub Project 01"
 ---
 
 {{< toc >}}
 
-## Hello
+## Header 2
 {{< badge icon="🚀" text="Explorer of the unknown" aria="Explorer Badge" >}}
 
-### Hello World
+### Header 3
 
-Details about Docker and Python Sub Project 01.
+Next follows R code
 
 ```{R}
 a <- 1
@@ -31,9 +32,13 @@ d <- a + b
 print(d)
 ```
 
+Next follows Python code
+
 ```{python}
 a = 1
 b = 2
 d = a + b
 print(d)
 ```
+
+Note that hugo shortcodes do not render in preview mode 

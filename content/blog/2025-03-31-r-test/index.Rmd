@@ -2,7 +2,7 @@
 title: "R Test"
 summary: "A test of R Markdown"
 date: "2025-04-06"
-slug: "r-statistics-intro"
+slug: "r-test"
 categories:
   - R
   - Statistics
@@ -16,14 +16,13 @@ draft: false
 {{< toc >}}
 
 
-## A test of R Markdown
+## Header 2
 
-Just a test of R Markdown, create some plots
+Just a test of R Markdown.
 
+## Header 3
 
-## Something to see?
-
-A simple plot test renders in preview, but shortcodes do not render in preview.
+Plot test renders in preview, but shortcodes do not.
 
 ```{r}
 par(mfrow = c(2, 2))

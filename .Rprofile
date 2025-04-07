@@ -16,7 +16,7 @@ blogit <- function(title = "Untitled",
     kind = "Rmd",
     open = FALSE,
     tags = tags,
-    categories = categories,
+    categories = categories
   )
 }
 

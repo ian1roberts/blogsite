@@ -1,42 +1,59 @@
+# Variables
+PROJECT_DIR := /home/ian/Code/blogsite
+DEPLOY_DIR := $(HOME)/raspian_blog
+R_CMD := R -q --no-save -e
+
+
+# Rules
 build:
 	@echo "Building blog..."
-	R -q --no-save -e "setwd('/home/ian/Code/blogsite'); source('.Rprofile'); blogdown::build_site(build_rmd=TRUE)"
+	$(R_CMD) "setwd('$(PROJECT_DIR)'); source('.Rprofile'); blogdown::build_site(build_rmd = TRUE)"
 
 clean:
 	@echo "Cleaning blog..."
-	rm -rf public resources
-	rm -rf .Rproj.user
-	rm -rf .Rhistory
-	rm -rf .RData
-	rm -rf .knitcache
-	rm -rf .cache
-	rm -rf _cache
-
-	find content/ -type f -name "*.md" -delete
-	find content/ -type f -name "*.markdown" -delete
-	find content/ -type f -name "*.Rmd~" -delete
-	find content/ -type f -name "*.Rmarkdown~" -delete
-	find content/ -type f -name "*.html~" -delete
-	find content/ -type f -name "*.html" -delete
+	rm -rf public resources .Rproj.user .Rhistory .RData .knitcache .cache _cache
+	find content/ -type f \( -name "*.md" -o -name "*.markdown" -o -name "*.Rmd~" -o -name "*.Rmarkdown~" -o -name "*.html~" -o -name "*.html" \) -delete
 	find content/ -type d -name ".ipynb_checkpoints" -exec rm -rf {} +
-	find . -type f -name "*~" -delete
-	find . -type f -name "*.tmp" -delete
-	find . -type f -name "*.swp" -delete
+	find content/ -type d -name "index_files" -exec rm -rf {} +
+	find . -type f \( -name "*~" -o -name "*.tmp" -o -name "*.swp" \) -delete
 
 install:
 	@echo "Installing blog..."
-	cp -r ./public/* ~/raspian_blog/
+	rsync -rtv --delete ./public/ $(DEPLOY_DIR)/
 
-# Rule to create a new blog post
 new-post:
-	@read -p "Enter the title of the new post: " title; \
-	R -q --no-save -e "setwd('/home/ian/Code/blogsite'); source('.Rprofile'); blogit(title = '$$title')"
+	@read -p "Enter the title of the new post: " title && \
+	echo "Creating new post with title: $$title" && \
+	$(R_CMD) "setwd('$(PROJECT_DIR)'); source('.Rprofile'); blogit(title = \"$$title\")"
 
+serve:
+	@echo "Launching local preview server..."
+	$(R_CMD) "setwd('$(PROJECT_DIR)'); source('.Rprofile'); blogdown::serve_site()"
 
+deploy:
+	@echo "Deploying blog..."
+	$(MAKE) quick-build
+	rsync -rtv --delete ./public/ $(DEPLOY_DIR)/
 
-# Define the full-install rule
-full-install: clean build install
-	@echo "Full installation complete!"
+quick-build:
+	@echo "Incremental build..."
+	$(R_CMD) "setwd('$(PROJECT_DIR)'); source('.Rprofile'); blogdown::build_site(build_rmd = FALSE)"
 
-# Declare phony targets to avoid conflicts with files of the same name
-.PHONY: build clean install full-install
+new-build:
+	@echo "Building only new Rmd files..."
+	$(R_CMD) "setwd('$(PROJECT_DIR)'); source('.Rprofile'); blogdown::build_site(build_rmd = 'newfile')"
+
+update:
+	@echo "Building new or modified Rmds and deploying site..."
+	$(MAKE) new-build
+	$(MAKE) quick-build
+	$(MAKE) install
+
+full-install:
+	@echo "Running full build pipeline..."
+	$(MAKE) clean
+	$(MAKE) build
+	$(MAKE) install
+
+# Declare phony targets
+.PHONY: build clean install new-post serve deploy quick-build new-build update full-install
