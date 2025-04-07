@@ -2,7 +2,6 @@
 title: 'Home'
 date: 2023-10-24
 type: landing
-output: blogdown::html_page
 toc: true
 share: false
 sections:
@@ -20,6 +19,7 @@ sections:
       filters:
         folders:
           - blog
+          - projects
     design:
       spacing:
         padding: ['3rem', 0, '6rem', 0]

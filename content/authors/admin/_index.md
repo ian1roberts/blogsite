@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Ian's Blogsite
+title: "Ian's Blogsite"
 
 # Full name (for SEO)
 first_name: Ian
@@ -51,5 +51,4 @@ highlight_name: true
 
 # Author's website URL
 website: "raspian.local"
-output: blogdown::html_page
 ---

@@ -10,8 +10,9 @@ categories:
 tags:
   - Python
   - Packaging
-output: blogdown::html_document
 date: 2025-03-31
+draft: false
+summary: "A test of Python Sub Project 01"
 ---
 
 {{< toc >}}
@@ -23,17 +24,26 @@ date: 2025-03-31
 
 Details about Docker and Python Sub Project 01.
 
-```{R}
 
+``` r
 a <- 1
 b <- 2
 d <- a + b 
 print(d)
 ```
 
-```{python}
+```
+## [1] 3
+```
+
+
+``` python
 a = 1
 b = 2
 d = a + b
 print(d)
+```
+
+```
+## 3
 ```

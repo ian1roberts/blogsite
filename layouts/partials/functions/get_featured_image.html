@@ -1,0 +1,24 @@
+{{/* Function to retrieve the featured image */}}
+{{/* Inputs: page context */}}
+{{/* Output: image resource, or nil if not found */}}
+
+{{/* 1. Search for a file "*featured*" in page folder */}}
+{{ $resource := (.Resources.ByType "image").GetMatch "*featured*" }}
+
+{{ if not $resource }}
+  {{/* 2. Try filename from front matter */}}
+  {{ $filename := .Params.image.filename }}
+  {{ if $filename }}
+    {{ $resource = (.Resources.ByType "image").GetMatch $filename }}
+    {{ if not $resource }}
+      {{ $resource = resources.GetMatch (path.Join "media" $filename) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if not $resource }}
+  {{/* 3. Final fallback to default featured image */}}
+  {{ $resource = resources.Get "images/defaults/featured.png" }}
+{{ end }}
+
+{{ return $resource }}

@@ -1,0 +1,22 @@
+---
+title: Test Post
+author: Ian Roberts
+date: '2025-04-06'
+slug: test-post
+summary: "This is a test post to check the blogdown setup."
+categories:
+  - Programming
+tags:
+  - test
+  - ggplot2
+draft: false
+---
+
+```{R}
+# Load required libraries
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(knitr)
+qplot(1:10)
+```
