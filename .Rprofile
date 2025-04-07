@@ -1,7 +1,7 @@
 options(blogdown.hugo.version = "0.145.0")
 options(blogdown.verbose = TRUE)
 options(
-  blogdown.ext = ".Rmarkdown",
+  blogdown.ext = ".Rmd",
   blogdown.author = "Ian Roberts",
   blogdown.subdir = "blog",
   blogdown.method = "markdown"
@@ -34,4 +34,7 @@ options(knitr.default.chunk = list(
   message = FALSE
 ))
 
-
+# Set default options for reticulate
+Sys.setenv(RETICULATE_PYTHON_ENV = paste0(getwd(), "/.env/"))
+library(reticulate)
+reticulate::py_config()
